@@ -156,9 +156,3 @@ The test suite covers:
 
 ---
 
-## Key Design Decisions
-
-- **Streaming CSV reader** — files are processed line-by-line so even 1 GB+ files never need to be fully loaded into memory.
-- **Interface-based design** — `IInstallationDataProvider` and `ILicenseCalculatorService` decouple the data source from the calculation logic, making it easy to add new data sources (e.g. database) without touching the calculator.
-- **Immutable record model** — `InstallationRecord` is a C# `record`, making deduplication with `DistinctBy` simple and reliable.
-- **Laptop-first pairing** — laptops are paired with desktops before pairing with other laptops, ensuring the maximum number of desktops benefit from sharing.
